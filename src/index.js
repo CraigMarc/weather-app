@@ -9,7 +9,8 @@ const myIcon = new Image();
     myIcon.classList.add('imageHome');
 
     element.appendChild(myIcon);
-return element
+    console.log(element)
+return document.body.appendChild(element);
 }
 
 addImage()
