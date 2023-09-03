@@ -16,3 +16,25 @@ return document.body.appendChild(element);
 addImage()
 
 console.log('hello')
+
+
+async function getWeather() {
+   
+
+
+    try{
+    const response = await fetch('https://api.weatherapi.com/v1/current.json?key=53333bca513f49888a303110233008&q=london', {mode: 'cors'})
+
+    const weatherData = await response.json();
+
+        console.log(weatherData)
+
+    
+    }
+    
+    catch (error) {
+        console.error("There has been a problem with your fetch operation:", error);
+        }
+  }
+
+  getWeather()
