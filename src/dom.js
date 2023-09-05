@@ -4,10 +4,10 @@ function weatherDisplay(weatherData) {
     removeDiv.id = 'remove';
 
     const town = document.createElement('h1');
-    town.textContent = weatherData.locationName
+    town.textContent = weatherData[0].locationName
 
     const state = document.createElement('h1');
-    state.textContent = weatherData.locationState
+    state.textContent = weatherData[0].locationState
 
     const weatherContainer = document.createElement('div');
     weatherContainer.classList.add('weatherContainer');
@@ -33,11 +33,11 @@ function weatherDisplay(weatherData) {
 
         //max temp
         const maxTempText = document.createElement('p');
-        maxTempText.textContent = maxTemp
+        maxTempText.textContent = "Max Temp: "+ maxTemp
 
         //min temp
         const minTempText = document.createElement('p');
-        minTempText.textContent = minTemp
+        minTempText.textContent = "Min Temp: " + minTemp
 
 
 
@@ -52,8 +52,9 @@ function weatherDisplay(weatherData) {
 
     }
 
-    createWeatherDiv(weatherData[0].maxTempF, weatherData[0].minTempF, weatherData[0].condition, weatherData[0].weekDay, weatherData[0].iconJoin)
-
+    createWeatherDiv(weatherData[0].maxTempF, weatherData[0].minTempF, weatherData[0].condition, weatherData[0].weekDay, weatherData[0].icon)
+    createWeatherDiv(weatherData[1].maxTempF, weatherData[1].minTempF, weatherData[1].condition, weatherData[1].weekDay, weatherData[1].icon)
+    createWeatherDiv(weatherData[2].maxTempF, weatherData[2].minTempF, weatherData[2].condition, weatherData[2].weekDay, weatherData[2].icon)
 
     removeDiv.appendChild(town);
     removeDiv.appendChild(state);

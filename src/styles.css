@@ -1,3 +1,16 @@
-h1 {
-    color: blue;
+body {
+    text-align: center;
+}
+
+.weatherContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.weatherItem {
+    border: solid;
+    width: 200px;
+    border-radius: 10px;
 }

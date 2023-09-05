@@ -1,7 +1,7 @@
 import './styles.css';
 import weatherDisplay from './dom';
-import Icon from './images/pizza.jpeg'
-
+//import Icon from './images/pizza.jpeg'
+/*
 const element = document.createElement('div');
 
 function addImage() {
@@ -16,7 +16,7 @@ return document.body.appendChild(element);
 
 addImage()
 
-
+*/
 
  
 
@@ -59,15 +59,16 @@ addImage()
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
         let date = forecastData.forecast.forecastday[day].date
+        /*
       let array = icon.split("")
       array.splice(0, 2)
-      let iconJoin = array.join('')
+      let iconJoin = array.join('')*/
       let dt = new Date(date);
      
       let weekDay = weekday[dt.getDay() + 1];
      
      
-        return { maxTempC, maxTempF, minTempC, minTempF, condition, iconJoin, locationName, locationState, weekDay }
+        return { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState, weekDay }
     }
     function dataArray() {
       let weatherArray = []
