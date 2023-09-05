@@ -9,33 +9,13 @@ const myIcon = new Image();
     myIcon.classList.add('imageHome');
 
     element.appendChild(myIcon);
-    console.log(element)
+   
 return document.body.appendChild(element);
 }
 
 addImage()
 
 
-
-
-async function getWeather(location) {
-   
-
-
-    try{
-    const response = await fetch('https://api.weatherapi.com/v1/current.json?key=53333bca513f49888a303110233008&q='+location, {mode: 'cors'})
-
-    const weatherData = await response.json();
-
-        console.log(weatherData)
-
-    
-    }
-    
-    catch (error) {
-        console.error("There has been a problem with your fetch operation:", error);
-        }
-  }
 
  
 
@@ -48,8 +28,8 @@ async function getWeather(location) {
 
     const forecastData = await response.json();
 
-    processData(forecastData)
-
+  //processData(forecastData)
+      return  processData(forecastData)
     }
     
     catch (error) {
@@ -58,7 +38,7 @@ async function getWeather(location) {
   }
 
 
-  getWeather('london')
+  
   getForecast('07701')
 
   function processData(forecastData) {
@@ -69,18 +49,14 @@ async function getWeather(location) {
         let minTempF = forecastData.forecast.forecastday[0].day.mintemp_f
         let condition = forecastData.forecast.forecastday[0].day.condition.text
         let icon = forecastData.forecast.forecastday[0].day.condition.icon
-
-        console.log(maxTempC)
-        console.log(maxTempF)
-        console.log(minTempC)
-        console.log(minTempF)
-        console.log(condition)
-        console.log(icon)
-
-        console.log(forecastData.forecast.forecastday[0].day)
-
-
+    
+       // console.log(forecastData.forecast.forecastday[0].day)
+   let data =   { maxTempC, maxTempF, minTempC, minTempF, condition, icon }
+  console.log(data)
+  
   }
+
+
 
 
   /*get data from form*/
@@ -91,6 +67,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
     //let authorForm = data.author
     
     console.log(data.location)
-    getForecast(data.location)
+   getForecast(data.location)
 
 })
