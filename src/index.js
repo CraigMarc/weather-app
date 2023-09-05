@@ -18,12 +18,12 @@ addImage()
 console.log('hello')
 
 
-async function getWeather() {
+async function getWeather(location) {
    
 
 
     try{
-    const response = await fetch('https://api.weatherapi.com/v1/current.json?key=53333bca513f49888a303110233008&q=london', {mode: 'cors'})
+    const response = await fetch('https://api.weatherapi.com/v1/current.json?key=53333bca513f49888a303110233008&q='+location, {mode: 'cors'})
 
     const weatherData = await response.json();
 
@@ -37,4 +37,25 @@ async function getWeather() {
         }
   }
 
-  getWeather()
+  getWeather('london')
+
+  async function getForecast(location) {
+   
+
+
+    try{
+    const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=53333bca513f49888a303110233008&days=3&q='+location, {mode: 'cors'})
+
+    const forcastData = await response.json();
+
+        console.log(forcastData)
+
+    
+    }
+    
+    catch (error) {
+        console.error("There has been a problem with your fetch operation:", error);
+        }
+  }
+
+  getForecast('07701')
