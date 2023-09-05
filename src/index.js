@@ -53,7 +53,11 @@ addImage()
         let icon = forecastData.forecast.forecastday[day].day.condition.icon
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
-        return { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState }
+      let array = icon.split("")
+      array.splice(0, 2)
+      let iconJoin = array.join('')
+     
+        return { maxTempC, maxTempF, minTempC, minTempF, condition, iconJoin, locationName, locationState }
     }
      
    let data = returnData(0)
