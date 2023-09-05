@@ -15,7 +15,7 @@ return document.body.appendChild(element);
 
 addImage()
 
-console.log('hello')
+
 
 
 async function getWeather(location) {
@@ -37,7 +37,7 @@ async function getWeather(location) {
         }
   }
 
-  getWeather('london')
+ 
 
   async function getForecast(location) {
    
@@ -46,11 +46,10 @@ async function getWeather(location) {
     try{
     const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=53333bca513f49888a303110233008&days=3&q='+location, {mode: 'cors'})
 
-    const forcastData = await response.json();
+    const forecastData = await response.json();
 
-        console.log(forcastData)
+    processData(forecastData)
 
-    
     }
     
     catch (error) {
@@ -58,4 +57,27 @@ async function getWeather(location) {
         }
   }
 
+
+  getWeather('london')
   getForecast('07701')
+
+  function processData(forecastData) {
+
+    let maxTempC = forecastData.forecast.forecastday[0].day.maxtemp_c
+        let maxTempF = forecastData.forecast.forecastday[0].day.maxtemp_f
+        let minTempC = forecastData.forecast.forecastday[0].day.mintemp_c
+        let minTempF = forecastData.forecast.forecastday[0].day.mintemp_f
+        let condition = forecastData.forecast.forecastday[0].day.condition.text
+        let icon = forecastData.forecast.forecastday[0].day.condition.icon
+
+        console.log(maxTempC)
+        console.log(maxTempF)
+        console.log(minTempC)
+        console.log(minTempF)
+        console.log(condition)
+        console.log(icon)
+
+        console.log(forecastData.forecast.forecastday[0].day)
+
+
+  }
