@@ -49,9 +49,11 @@ addImage()
         let minTempF = forecastData.forecast.forecastday[0].day.mintemp_f
         let condition = forecastData.forecast.forecastday[0].day.condition.text
         let icon = forecastData.forecast.forecastday[0].day.condition.icon
+        let locationName = forecastData.location.name
+        let locationState = forecastData.location.region 
     
-       // console.log(forecastData.forecast.forecastday[0].day)
-   let data =   { maxTempC, maxTempF, minTempC, minTempF, condition, icon }
+     
+   let data =   { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState }
   console.log(data)
   
   }
