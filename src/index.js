@@ -48,6 +48,8 @@ addImage()
     
     function returnData(day) {
 
+      const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
     let maxTempC = forecastData.forecast.forecastday[day].day.maxtemp_c
         let maxTempF = forecastData.forecast.forecastday[day].day.maxtemp_f
         let minTempC = forecastData.forecast.forecastday[day].day.mintemp_c
@@ -56,11 +58,16 @@ addImage()
         let icon = forecastData.forecast.forecastday[day].day.condition.icon
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
+        let date = forecastData.forecast.forecastday[day].date
       let array = icon.split("")
       array.splice(0, 2)
       let iconJoin = array.join('')
+      let dt = new Date(date);
      
-        return { maxTempC, maxTempF, minTempC, minTempF, condition, iconJoin, locationName, locationState }
+      let weekDay = weekday[dt.getDay() + 1];
+     
+     
+        return { maxTempC, maxTempF, minTempC, minTempF, condition, iconJoin, locationName, locationState, weekDay }
     }
     function dataArray() {
       let weatherArray = []
@@ -72,9 +79,6 @@ addImage()
     }
 
     weatherDisplay(dataArray())
-
-
-  //console.log(dataArray())
      
   
   
