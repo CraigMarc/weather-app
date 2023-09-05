@@ -42,6 +42,7 @@ addImage()
   getForecast('07701')
 
   function processData(forecastData) {
+    
     function returnData(day) {
 
     let maxTempC = forecastData.forecast.forecastday[day].day.maxtemp_c
@@ -75,7 +76,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const data = Object.fromEntries(new FormData(e.target).entries());
     //let authorForm = data.author
     
-    console.log(data.location)
+    
    getForecast(data.location)
 
 })
