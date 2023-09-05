@@ -42,19 +42,26 @@ addImage()
   getForecast('07701')
 
   function processData(forecastData) {
+    function returnData(day) {
 
-    let maxTempC = forecastData.forecast.forecastday[0].day.maxtemp_c
-        let maxTempF = forecastData.forecast.forecastday[0].day.maxtemp_f
-        let minTempC = forecastData.forecast.forecastday[0].day.mintemp_c
-        let minTempF = forecastData.forecast.forecastday[0].day.mintemp_f
-        let condition = forecastData.forecast.forecastday[0].day.condition.text
-        let icon = forecastData.forecast.forecastday[0].day.condition.icon
+    let maxTempC = forecastData.forecast.forecastday[day].day.maxtemp_c
+        let maxTempF = forecastData.forecast.forecastday[day].day.maxtemp_f
+        let minTempC = forecastData.forecast.forecastday[day].day.mintemp_c
+        let minTempF = forecastData.forecast.forecastday[day].day.mintemp_f
+        let condition = forecastData.forecast.forecastday[day].day.condition.text
+        let icon = forecastData.forecast.forecastday[day].day.condition.icon
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
-    
+        return { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState }
+    }
      
-   let data =   { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState }
+   let data = returnData(0)
+    let data2 = returnData(1)
+    let data3 = returnData(2)
+   
   console.log(data)
+  console.log(data2)
+  console.log(data3)
   
   }
 
