@@ -14,3 +14,13 @@ body {
     width: 200px;
     border-radius: 10px;
 }
+
+.weatherPictures {
+    height: 100px;
+    width: 100px;
+}
+
+.forecast {
+    font-weight: bold;
+    font-size: 20px;
+}

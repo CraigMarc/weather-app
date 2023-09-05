@@ -25,11 +25,12 @@ function weatherDisplay(weatherData) {
         /*weather pic*/
         const image = new Image();
         image.src = imageFile;
-        image.classList.add('WeatherPictures');
+        image.classList.add('weatherPictures');
 
         //forecast
         const forecastText = document.createElement('p');
         forecastText.textContent = forecast
+        forecastText.classList.add('forecast');
 
         //max temp
         const maxTempText = document.createElement('p');
