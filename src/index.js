@@ -1,4 +1,5 @@
 import './styles.css';
+import weatherDisplay from './dom';
 import Icon from './images/pizza.jpeg'
 
 const element = document.createElement('div');
@@ -42,6 +43,8 @@ addImage()
   getForecast('07701')
 
   function processData(forecastData) {
+
+   
     
     function returnData(day) {
 
@@ -59,14 +62,21 @@ addImage()
      
         return { maxTempC, maxTempF, minTempC, minTempF, condition, iconJoin, locationName, locationState }
     }
+    function dataArray() {
+      let weatherArray = []
+      for (let i = 0; i < 3; i++) {
+        weatherArray.push(returnData(i))
+          
+      }
+      return weatherArray
+    }
+
+    weatherDisplay(dataArray())
+
+
+  //console.log(dataArray())
      
-   let data = returnData(0)
-    let data2 = returnData(1)
-    let data3 = returnData(2)
-   
-  console.log(data)
-  console.log(data2)
-  console.log(data3)
+  
   
   }
 
