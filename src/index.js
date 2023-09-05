@@ -81,3 +81,16 @@ async function getWeather(location) {
 
 
   }
+
+
+  /*get data from form*/
+
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    //let authorForm = data.author
+    
+    console.log(data.location)
+    getForecast(data.location)
+
+})
