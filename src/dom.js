@@ -80,9 +80,26 @@ function weatherDisplay(weatherData, unit) {
 
 }
 
+function errorDisplay() {
+
+    const removeDiv = document.createElement('div');
+    removeDiv.id = 'remove';
+
+    const error = document.createElement('h2');
+
+        error.textContent = 'Location Not Found'
+
+        removeDiv.appendChild(error)
+
+        return document.body.appendChild(removeDiv);
+
+}
+
+
+export {
+    weatherDisplay,
+    errorDisplay
+}
 
 
 
-
-
-export default weatherDisplay;

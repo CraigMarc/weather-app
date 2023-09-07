@@ -1,5 +1,8 @@
 import './styles.css';
-import weatherDisplay from './dom';
+
+import { weatherDisplay, errorDisplay } from "./dom";
+
+
 //import Icon from './images/pizza.jpeg'
 /*
 const element = document.createElement('div');
@@ -35,6 +38,8 @@ addImage()
     
     catch (error) {
         console.error("There has been a problem with your fetch operation:", error);
+      //add error message to dom
+      errorDisplay()
         }
   }
 
