@@ -65,4 +65,15 @@ button {
 
 form {
     font-size: 20px;
+   
+}
+
+input {
+    background-color: antiquewhite;
+    color: #525c6b;
+}
+
+select {
+    background-color: antiquewhite;
+    color: #525c6b;
 }

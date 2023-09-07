@@ -4,7 +4,7 @@ function weatherDisplay(weatherData, unit) {
     removeDiv.id = 'remove';
 
     const town = document.createElement('h1');
-    town.textContent = weatherData[0].locationName
+    town.textContent = weatherData[0].locationName + ","
     town.classList.add('town');
 
     const state = document.createElement('h1');
