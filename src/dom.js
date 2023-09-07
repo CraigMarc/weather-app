@@ -5,9 +5,11 @@ function weatherDisplay(weatherData, unit) {
 
     const town = document.createElement('h1');
     town.textContent = weatherData[0].locationName
+    town.classList.add('town');
 
     const state = document.createElement('h1');
     state.textContent = weatherData[0].locationState
+    state.classList.add('state');
 
     const weatherContainer = document.createElement('div');
     weatherContainer.classList.add('weatherContainer');
