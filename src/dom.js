@@ -1,4 +1,4 @@
-function weatherDisplay(weatherData) {
+function weatherDisplay(weatherData, unit) {
 
     const removeDiv = document.createElement('div');
     removeDiv.id = 'remove';
@@ -52,10 +52,17 @@ function weatherDisplay(weatherData) {
         weather1.appendChild(minTempText)
 
     }
-
+   
+    if (unit == 'f'){
     createWeatherDiv(weatherData[0].maxTempF, weatherData[0].minTempF, weatherData[0].condition, weatherData[0].weekDay, weatherData[0].icon)
     createWeatherDiv(weatherData[1].maxTempF, weatherData[1].minTempF, weatherData[1].condition, weatherData[1].weekDay, weatherData[1].icon)
     createWeatherDiv(weatherData[2].maxTempF, weatherData[2].minTempF, weatherData[2].condition, weatherData[2].weekDay, weatherData[2].icon)
+    }
+   if (unit == 'c') {
+        createWeatherDiv(weatherData[0].maxTempC, weatherData[0].minTempC, weatherData[0].condition, weatherData[0].weekDay, weatherData[0].icon)
+        createWeatherDiv(weatherData[1].maxTempC, weatherData[1].minTempC, weatherData[1].condition, weatherData[1].weekDay, weatherData[1].icon)
+        createWeatherDiv(weatherData[2].maxTempC, weatherData[2].minTempC, weatherData[2].condition, weatherData[2].weekDay, weatherData[2].icon)
+   }
 
     removeDiv.appendChild(town);
     removeDiv.appendChild(state);

@@ -20,7 +20,7 @@ addImage()
 
  
 
-  async function getForecast(location) {
+  async function getForecast(location, unit) {
    
 
 
@@ -30,7 +30,7 @@ addImage()
     const forecastData = await response.json();
 
   //processData(forecastData)
-      return  processData(forecastData)
+      return  processData(forecastData, unit)
     }
     
     catch (error) {
@@ -40,9 +40,9 @@ addImage()
 
 
   
-  getForecast('07701')
+  getForecast('07701', 'f')
 
-  function processData(forecastData) {
+  function processData(forecastData, unit) {
 
    
     
@@ -79,7 +79,7 @@ addImage()
       return weatherArray
     }
 
-    weatherDisplay(dataArray())
+    weatherDisplay(dataArray(), unit)
      
   
   
@@ -96,7 +96,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
    
     const remove = document.getElementById("remove");
     remove.remove()
-    
-   getForecast(data.location)
+    console.log(data.unit)
+   getForecast(data.location, data.unit)
 
 })
