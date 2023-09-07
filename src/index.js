@@ -101,7 +101,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
    
     const remove = document.getElementById("remove");
     remove.remove()
-    console.log(data.unit)
+    
    getForecast(data.location, data.unit)
-
+   document.getElementById("form").reset()
 })
