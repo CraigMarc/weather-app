@@ -64,10 +64,9 @@ addImage()
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
         let date = forecastData.forecast.forecastday[day].date
-       console.log(date)
+      
       let dt = new Date(date);
     
-     console.log(dt)
       let weekDay = weekdayArr[dt.getUTCDay()];
      
      
