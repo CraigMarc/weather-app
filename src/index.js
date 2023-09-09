@@ -53,8 +53,8 @@ addImage()
     
     function returnData(day) {
 
-      const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
+      const weekdayArr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      //console.log(forecastData)
     let maxTempC = forecastData.forecast.forecastday[day].day.maxtemp_c
         let maxTempF = forecastData.forecast.forecastday[day].day.maxtemp_f
         let minTempC = forecastData.forecast.forecastday[day].day.mintemp_c
@@ -64,13 +64,11 @@ addImage()
         let locationName = forecastData.location.name
         let locationState = forecastData.location.region 
         let date = forecastData.forecast.forecastday[day].date
-        /*
-      let array = icon.split("")
-      array.splice(0, 2)
-      let iconJoin = array.join('')*/
+       console.log(date)
       let dt = new Date(date);
-     
-      let weekDay = weekday[dt.getDay() + 1];
+    
+     console.log(dt)
+      let weekDay = weekdayArr[dt.getUTCDay()];
      
      
         return { maxTempC, maxTempF, minTempC, minTempF, condition, icon, locationName, locationState, weekDay }
