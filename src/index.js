@@ -54,7 +54,7 @@ addImage()
     function returnData(day) {
 
       const weekdayArr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-      //console.log(forecastData)
+     
     let maxTempC = forecastData.forecast.forecastday[day].day.maxtemp_c
         let maxTempF = forecastData.forecast.forecastday[day].day.maxtemp_f
         let minTempC = forecastData.forecast.forecastday[day].day.mintemp_c
