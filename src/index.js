@@ -3,24 +3,6 @@ import './styles.css';
 import { weatherDisplay, errorDisplay } from "./dom";
 
 
-//import Icon from './images/pizza.jpeg'
-/*
-const element = document.createElement('div');
-
-function addImage() {
-const myIcon = new Image();
-    myIcon.src = Icon;
-    myIcon.classList.add('imageHome');
-
-    element.appendChild(myIcon);
-   
-return document.body.appendChild(element);
-}
-
-addImage()
-
-*/
-
  
 
   async function getForecast(location, unit) {
